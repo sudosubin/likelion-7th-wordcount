@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h2 class="title">분석 결과</h2>
+            <h3 class="description">입력한 문장에 대한 분석 결과입니다.</h3>
+        </div>
+
+        <div class="main-area col-12">
+            <h3 class="subtitle">입력한 문장</h3>
+            <form class="main-form" action="{% url 'result' %}">
+                <textarea id="raw_text" class="form-control" rows="5" name="raw_text" disabled>{{ raw_text }}</textarea>
+            </form>
+            <a class="btn main-btn" href="{% url 'index' %}">다시 분석하기</a>
+        </div>
+
+        <div class="main-area col-12 col-md-6">
+            <h3 class="subtitle">글자수 분석</h3>
+            <div class="table">
+                <div class="table-left">글자수 (공백 포함)</div>
+                <div class="table-right">{{ char_num_withb }}</div>
+                <div class="table-left">글자수 (공백 미포함)</div>
+                <div class="table-right">{{ char_num_withoutb }}</div>
+            </div>
+            <h3 class="subtitle">단어수 분석</h3>
+            <div class="table">
+                <div class="table-left">단어수</div>
+                <div class="table-right">{{ word_num }}</div>
+            </div>
+        </div>
+
+        <div class="main-area col-12 col-md-6">
+            <h3 class="subtitle">단어 빈도</h3>
+            {% for alpha, words in word_dic %}
+                <h4 class="minititle">{{ alpha }}</h4>
+                <div class="table">
+                    {% for word, num in words.items %}
+                        {% if num == max_num %}
+                            <div class="table-left max">{{ word }}</div>
+                            <div class="table-right max">{{ num }}회</div>
+                        {% else %}
+                            <div class="table-left">{{ word }}</div>
+                            <div class="table-right">{{ num }}회</div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    <script src="{% static 'js/index.js' %}" type="text/javascript"></script>
+{% endblock %}

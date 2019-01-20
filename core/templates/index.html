@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h2 class="title">분석할 문장 입력</h2>
+            <h3 class="description">글자수, 단어수를 분석합니다.</h3>
+        </div>
+        <div class="main-area col-12">
+            <form class="main-form" action="{% url 'result' %}">
+                <textarea id="raw_text" class="form-control" rows="5" name="raw_text"></textarea>
+                <button class="btn main-btn" type="submit">분석</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/index.js' %}" type="text/javascript"></script>
+{% endblock %}

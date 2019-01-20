@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+
+/* Noto Sans CJK KR */
+
+@font-face {
+    font-family: 'Noto Sans CJK KR';
+    font-weight: 400;
+    src: url('../font/NotoSansCJKkr-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans CJK KR';
+    font-weight: 700;
+    src: url('../font/NotoSansCJKkr-Bold.otf') format('opentype');
+}
+
+
+/* Noto Serif CJK KR */
+
+@font-face {
+    font-family: 'Noto Serif CJK KR';
+    font-weight: 400;
+    src: url('../font/NotoSerifCJKkr-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Serif CJK KR';
+    font-weight: 700;
+    src: url('../font/NotoSerifCJKkr-Bold.otf') format('opentype');
+}
+
+
+/* font css */
+
+body, .sans {
+    font-family: 'Noto Sans CJK KR', sans-serif;
+}
+
+.serif {
+    font-family: 'Noto Serif CJK KR', serif;
+}

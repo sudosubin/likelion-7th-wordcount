@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@import "font.css";
+
+
+/* header 서식 */
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+
+/* 페이지 제목 서식 */
+
+.title {
+    padding: 0 .25rem .5rem;
+    border-bottom: .25rem solid #777;
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.description {
+    font-size: 1rem;
+    font-style: italic;
+    display: inline-block;
+    color: #999;
+}
+
+.subtitle {
+    margin-bottom: 1rem;
+    padding: .5rem .25rem;
+    border-bottom: .15rem solid #777;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.minititle {
+    text-align: left;
+    padding: .5rem .25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+/* card 서식 */
+
+.card-area {
+    padding: 1rem;
+}
+
+.card-area > .card-block {
+    padding: 1rem;
+    border: thin solid #eee;
+    border-radius: .25rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    text-align: center;
+}
+
+.card-area > .card-block > .card-title {
+    padding: 0 .25rem .5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: .15rem solid #999;
+    color: #333;
+    display: inline-block;
+}
+
+.card-area > .card-block > .card-desc {
+    font-size: 1rem;
+    text-align: justify;
+    color: #777;
+    text-indent: .9rem;
+    line-height: 1.3;
+}
+
+
+/* main 내 container의 여백 설정 */
+
+.main {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.main-area {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.main-area .main-btn {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border: thin solid #ddd;
+    border-radius: .5rem;
+    color: #555;
+}
+
+.main-area .main-btn:hover {
+    border: thin solid #aaa;
+    background-color: #eee;
+    color: #000;
+}
+
+/* table */
+
+.table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table > .table-left, .table > .table-right {
+    width: 50%;
+    padding: .75rem;
+    box-sizing: border-box;
+    border: thin solid #ddd;
+    display: inline-block;
+}
+
+.table > .table-left {
+    background-color: #f7f7f7;
+}
+
+.table > .table-right {
+    border-left: none;
+}
+
+/* 가장 많이 빈출된 단어 */
+
+.max {
+    background-color: #FFFF8D !important;
+    font-weight: bold;
+}
+
+
+/* footer의 여백 설정 */
+
+footer {
+    padding-top: 2rem;
+    border-top: thin solid #ddd;
+}

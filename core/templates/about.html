@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h2 class="title">사이트 소개</h2>
+            <h3 class="description">이 사이트는 무슨 일을 하나요?</h3>
+        </div>
+        <div class="card-area col-12 col-sm-6 col-md-4">
+            <div class="card-block">
+                <h3 class="card-title">글자수 세기</h3>
+                <h4 class="card-desc">문장을 입력하면, 각 단어의 빈출 수와 단어의 사용 빈도 등을 분석하여 나타냅니다. 매우 빠르고, 매우 효율적입니다!</h4>
+            </div>
+        </div>
+        <div class="card-area col-12 col-sm-6 col-md-4">
+            <div class="card-block">
+                <h3 class="card-title">공들인 디자인</h3>
+                <h4 class="card-desc">대충대충 예쁘게 디자인하였습니다. 공들인.. 공돌이 디자인으로 눈을 정화해보는 것은 어떨까요? 글쓰기에 뜻밖의 영감을 불러오기도 합니다.</h4>
+            </div>
+        </div>
+        <div class="card-area col-12 col-sm-6 col-md-4">
+            <div class="card-block">
+                <h3 class="card-title">최적화</h3>
+                <h4 class="card-desc">별 기능도 없고, 매우 기초적인 수준이기 때문에 매우 가볍고 빠릅니다. 모바일 환경, 해외 낮은 인터넷 감도, 한국식 웹 서비스에 고민 중인 분들은, 지금 바로 이 사이트를 이용하세요!</h4>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/about.js' %}" type="text/javascript"></script>
+{% endblock %}
