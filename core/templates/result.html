@@ -36,13 +36,13 @@
             {% for alpha, words in word_dic %}
                 <h4 class="minititle">{{ alpha }}</h4>
                 <div class="table">
-                    {% for word, num in words.items %}
-                        {% if num == max_num %}
+                    {% for word in words %}
+                        {% if word.show == max_num %}
                             <div class="table-left max">{{ word }}</div>
-                            <div class="table-right max">{{ num }}회</div>
+                            <div class="table-right max">{{ word.show }}회</div>
                         {% else %}
                             <div class="table-left">{{ word }}</div>
-                            <div class="table-right">{{ num }}회</div>
+                            <div class="table-right">{{ word.show }}회</div>
                         {% endif %}
                     {% endfor %}
                 </div>
