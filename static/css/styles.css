@@ -124,6 +124,9 @@
 
 .table > .table-right {
     border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* 가장 많이 빈출된 단어 */
@@ -131,6 +134,13 @@
 .max {
     background-color: #FFFF8D !important;
     font-weight: bold;
+}
+
+/* 워드 클라우드 */
+.word-cloud {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #dddddd;
 }
 
 

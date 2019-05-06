@@ -16,6 +16,11 @@
             <a class="btn main-btn" href="{% url 'index' %}">다시 분석하기</a>
         </div>
 
+        <div class="main-area col-12">
+            <h3 class="subtitle">워드 클라우드</h3>
+            <div class="word-cloud"></div>
+        </div>
+
         <div class="main-area col-12 col-md-6">
             <h3 class="subtitle">글자수 분석</h3>
             <div class="table">
@@ -37,13 +42,16 @@
                 <h4 class="minititle">{{ alpha }}</h4>
                 <div class="table">
                     {% for word in words %}
-                        {% if word.show == max_num %}
-                            <div class="table-left max">{{ word }}</div>
-                            <div class="table-right max">{{ word.show }}회</div>
-                        {% else %}
-                            <div class="table-left">{{ word }}</div>
-                            <div class="table-right">{{ word.show }}회</div>
-                        {% endif %}
+                        <div class="table-left{% if word.show == max_num %} max{% endif %}">
+                            <a class="text-decoration-none text-black-50 font-weight-bold"
+                               target="_blank" href="https://dict.naver.com/search.nhn?dicQuery={{ word }}"
+                               data-toggle="tooltip" data-placement="top" title="네이버 사전 검색하기">{{ word }}</a>
+                            <br>
+                            {% for type in word.type %}
+                                <span class="badge badge-secondary">{{ type.0 }} | {{ type.1 }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="table-right{% if word.show == max_num %} max{% endif %}">{{ word.show }}회</div>
                     {% endfor %}
                 </div>
             {% endfor %}
@@ -51,4 +59,10 @@
         </div>
     </div>
     <script src="{% static 'js/index.js' %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        var word_list = [
+            {% for _, words in word_dic %}{% for word in words %}
+            {text: "{{ word }}", weight: {{ word.show }}},{% endfor %}{% endfor %}
+        ];
+    </script>
 {% endblock %}
